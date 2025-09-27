@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                amazon
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <select class="search-categories">
+                    <option>All</option>
+                    <option>Electronics</option>
+                    <option>Books</option>
+                    <option>Clothing</option>
+                    <option>Home & Garden</option>
+                </select>
+                <input type="text" class="search-input" placeholder="Search Amazon">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <!-- Right Side Navigation -->
+            <div class="header-right">
+                <div class="nav-item">
+                    <span class="nav-line-1">Hello, Sign in</span>
+                    <span class="nav-line-2">Account & Lists</span>
+                </div>
+                <div class="nav-item">
+                    <span class="nav-line-1">Returns</span>
+                    <span class="nav-line-2">& Orders</span>
+                </div>
+                <div class="nav-item cart" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                    <span class="nav-line-2">Cart</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="nav-menu">
+            <div class="nav-container">
+                <div class="nav-item">
+                    <i class="fas fa-bars"></i>
+                    <span>All</span>
+                </div>
+                <div class="nav-item">Today's Deals</div>
+                <div class="nav-item">Customer Service</div>
+                <div class="nav-item">Registry</div>
+                <div class="nav-item">Gift Cards</div>
+                <div class="nav-item">Sell</div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Amazon Clone</h1>
+                <p>Discover millions of products at great prices</p>
+                <button class="cta-button">Shop Now</button>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="categories">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Electronics</h3>
+                    <p>Laptops, phones, tablets & more</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Books</h3>
+                    <p>Fiction, non-fiction & textbooks</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Clothing</h3>
+                    <p>Men's, women's & kids' fashion</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Home & Garden</h3>
+                    <p>Furniture, decor & appliances</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="products-grid">
+                <div class="product-card" data-product-id="1">
+                    <div class="product-image">
+                        <img src="laptop.jpg" alt="Laptop">
+                        <div class="product-overlay">
+                            <button class="add-to-cart-btn" onclick="addToCart(1)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3> Laptop</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(1,234)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$1,299.00</span>
+                            <span class="original-price">$1,399.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="2">
+                    <div class="product-image">
+                        <img src="iphone.jpg" alt="Phone">
+                        <div class="product-overlay">
+                            <button class="add-to-cart-btn" onclick="addToCart(2)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>iPhone 16 Pro</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(2,156)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$999.00</span>
+                            <span class="original-price">$1,099.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="3">
+                    <div class="product-image">
+                        <img src="headphones.jpg" alt="Headphones">
+                        <div class="product-overlay">
+                            <button class="add-to-cart-btn" onclick="addToCart(3)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Headphones</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(3,421)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$249.00</span>
+                            <span class="original-price">$279.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="4">
+                    <div class="product-image">
+                        <img src="watch.png" alt="Watch">
+                        <div class="product-overlay">
+                            <button class="add-to-cart-btn" onclick="addToCart(4)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Apple Watch</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(1,876)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$399.00</span>
+                            <span class="original-price">$449.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="5">
+                    <div class="product-image">
+                        <img src="tablet.png" alt="Tablet">
+                        <div class="product-overlay">
+                            <button class="add-to-cart-btn" onclick="addToCart(5)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tablet</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(2,543)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$599.00</span>
+                            <span class="original-price">$649.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="6">
+                    <div class="product-image">
+                        <img src="speaker.jpg" alt="Speaker">
+                        <div class="product-overlay">
+                            <button class="add-to-cart-btn" onclick="addToCart(6)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Speaker</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(4,123)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$49.99</span>
+                            <span class="original-price">$59.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Get to Know Us</h4>
+                <ul>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About Amazon</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Make Money with Us</h4>
+                <ul>
+                    <li><a href="#">Sell products on Amazon</a></li>
+                    <li><a href="#">Sell on Amazon Business</a></li>
+                    <li><a href="#">Sell apps on Amazon</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Amazon Payment Products</h4>
+                <ul>
+                    <li><a href="#">Amazon Business Card</a></li>
+                    <li><a href="#">Shop with Points</a></li>
+                    <li><a href="#">Reload Your Balance</a></li>
+                    <li><a href="#">Amazon Currency Converter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Let Us Help You</h4>
+                <ul>
+                    <li><a href="#">Amazon and COVID-19</a></li>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="foot">
+              amazon
+            </div>
+            <p>&copy; 2024 Amazon Clone. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
